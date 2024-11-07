@@ -1,8 +1,45 @@
 
 https://youtu.be/VN7mUuPfeXc?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
+
+https://youtu.be/QKsI0-3gv54?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
 ----------------------------------------
 
+npm i -g @nestjs/cli
+
+PS D:\GitHub\budget-manager-from-try-go-JS\server> nest new project-name
+
+npm run start:dev
+
+nest g resource user
+api
+y
+
+nest g resource category --no-spec
+
+nest g resource auth --no-spec
+
+nest g resource transaction --no-spec
+
+https://youtu.be/iqdMcTN9qck?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
+---------------------------------------------------------------------------- Pgsql
+
+https://www.postgresql.org/
+
+[Default locale]
+DB_HOST='localhost'
+DB_PORT=5433
+DB_USERNAME=postgres
+ADMIN_PASSWORD=admin
+DB_PASSWORD='123456'
+DB_NAME='expense'
+
+PS D:\GitHub\budget-manager-from-try-go-JS\server> npm i --save @nestjs/config
+PS D:\GitHub\budget-manager-from-try-go-JS\server>npm install --save @nestjs/typeorm typeorm pg
+
+
+
+
 
 
 ----------------------------------------
-00 : 00 : 00
+00 : 33 : 06
