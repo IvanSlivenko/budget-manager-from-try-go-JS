@@ -36,11 +36,20 @@ DB_NAME='expense'
 PS D:\GitHub\budget-manager-from-try-go-JS\server> npm i --save @nestjs/config
 PS D:\GitHub\budget-manager-from-try-go-JS\server>npm install --save @nestjs/typeorm typeorm pg
 
-
-
-
-
-
 ----------------------------------------
 00 : 40 : 08
+
+https://youtu.be/PWWz47GtGKo?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
+----------------------------------------------------------------------------- registation users
+
+class-validator
+https://docs.nestjs.com/pipes#class-validator
+
+npm i --save class-validator class-transformer
+
+https://youtu.be/z0mcxhsKCec
+-------------------------------- lesson insomnia
+
+----------------------------------------------------------------------------- registation users
+00 : 08 : 56
 
