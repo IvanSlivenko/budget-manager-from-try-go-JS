@@ -42,4 +42,5 @@ PS D:\GitHub\budget-manager-from-try-go-JS\server>npm install --save @nestjs/typ
 
 
 ----------------------------------------
-00 : 33 : 06
+00 : 40 : 08
+
