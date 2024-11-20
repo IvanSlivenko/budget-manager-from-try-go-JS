@@ -72,10 +72,21 @@ npm install --save-dev @types/passport-jwt
 00 : 31 : 46
 
 
-https://youtu.be/p3iSpCvDAsI?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
+https://youtu.be/p3iSpCvDAsI?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1         category
 -----------------------------------------------------------------------------
 
 
 
 -----------------------------------------------------------------------------
-00 : 05 : 49
+00 : 17 : 23
+
+
+
+
+https://youtu.be/SBssXOlJrws?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1         transaction
+-----------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------
+00 : 00 : 00
