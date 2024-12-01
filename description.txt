@@ -98,4 +98,29 @@ https://youtu.be/N7mOLvEpGHU?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
 
 
 -----------------------------------------------------------------------------
-08 : 21 : 44
+08 : 31 : 45
+
+
+https://youtu.be/Wk2I17jgSUw?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1     frontend
+------------------------------------------------------------------------------------
+
+https://vite.dev/guide/
+npm create vite@latest ./
+
+npm install
+
+
+
+https://github.com/tailwindlabs/tailwindcss?tab=readme-ov-file
+https://tailwindcss.com/
+
+npm install -D tailwindcss postcss autoprefixer
+
+npm install -D @tailwindcss/forms
+
+npm install -D prettier prettier-plugin-tailwindcss
+
+
+
+------------------------------------------------------------------------------------
+00 : 10 : 05
