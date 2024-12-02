@@ -130,7 +130,14 @@ npm install -D prettier prettier-plugin-tailwindcss
 https://youtu.be/BZ__FMHcAE0?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
 ----------------------------------------------------------------------
 
+https://reactrouter.com/6.28.0/start/tutorial
+
+npm install react-router-dom
+npm install localforage match-sorter sort-by
+
+npm install react-icons --save
+
 
 
 ----------------------------------------------------------------------
-00 : 00 : 53
+00 : 12 : 53
