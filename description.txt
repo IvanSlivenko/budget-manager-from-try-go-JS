@@ -140,4 +140,33 @@ npm install react-icons --save
 
 
 ----------------------------------------------------------------------
-00 : 12 : 53
+00 : 18 : 15
+
+
+
+
+https://youtu.be/-zQrK0mfZFY?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
+---------------------------------------------------------------------  frontend - registration
+
+npm i axios
+
+npm i react-toastify
+
+npm install @reduxjs/toolkit
+
+npm install react-redux
+
+
+
+
+-----------------------------------------------------------------------
+01 : 06 : 39
+
+
+https://youtu.be/UWL1-pzVtWE?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
+---------------------------------------------------------------------- private routes
+
+
+
+----------------------------------------------------------------------
+00 : 00 : 00
