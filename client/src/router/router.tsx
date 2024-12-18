@@ -3,7 +3,7 @@ import Layout from "../pages/Layout"
 import ErrorPage from "../pages/ErrorPage"
 import Home from "../pages/Home"
 import Transactions from "../pages/Transactions"
-import Categories from "../pages/Categories"
+import Categories, { categoriesAction, cayegoryLoader } from "../pages/Categories"
 import Auth from "../pages/Auth"
 import About from "../pages/About"
 import { ProtectedRoute } from "../components/ProtectedRoute"
@@ -26,6 +26,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'categories',
+                action: categoriesAction,
+                loader: cayegoryLoader,
                 element: <ProtectedRoute>
                             <Categories />
                         </ProtectedRoute>,
