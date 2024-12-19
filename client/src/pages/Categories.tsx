@@ -20,6 +20,9 @@ export const categoriesAction = async ({ request }: any) => {
       return null
     }
     case "DELETE": {
+      const formData = await request.formData()
+      const categoryId = formData.get('id')
+      await instance.delete(`/categories/category/${categoryId}`)
       return null
     }
   }
@@ -55,7 +58,7 @@ const Categories: FC = () => {
                 method='delete'
                 action='/categories'
                 >
-                  <input type="hidden" value={category.id} />
+                  <input type="hidden"  name="id" value={category.id} />
                   <button type='submit'> 
                     <AiFillCloseCircle/>
                   </button>
