@@ -1,6 +1,18 @@
 import { FC } from 'react'
 import TransactionForm from '../components/TransactionForm'
 
+export const transactionLoader = async () => {
+  
+  const data = {}
+  return data
+}
+
+export const transactionAction = async ({ request }: any) => {
+  
+  const data = {}
+  return data
+}
+
 const Transactions: FC = () => {
   return (
     <>
