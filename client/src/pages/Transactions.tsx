@@ -1,16 +1,36 @@
 import { FC } from 'react'
 import TransactionForm from '../components/TransactionForm'
+import { instance } from '../api/axios.api'
+import { ICategory, IResponseTransactionLoader } from '../types/types'
+import { useLoaderData } from 'react-router-dom'
 
 export const transactionLoader = async () => {
   
-  const data = {}
+  const categories = await instance.get<ICategory[]>('/categories')
+  const data = {
+    categories: categories.data,
+  }
   return data
 }
 
 export const transactionAction = async ({ request }: any) => {
   
-  const data = {}
-  return data
+  switch(request.method) {
+    case "POST": {
+      const formData = await request.formData()
+      const newTransaction ={
+        title: formData.get('title'),
+        amount: formData.get('amount'),
+        category: formData.get('category'),
+        type: formData.get('type')
+      }
+    }
+    case "DELETE": {
+
+    }
+
+  }
+  
 }
 
 const Transactions: FC = () => {
@@ -18,7 +38,9 @@ const Transactions: FC = () => {
     <>
       <div className="grid grid-cols-3 gap-4 mt-4 items-start">
         {/* Add Transaction Form */}
-        <div className="grid col-span-2"><TransactionForm/></div>
+        <div className="grid col-span-2">
+          <TransactionForm/>
+        </div>
         
         {/* Statistics blocks */}
         <div className="rounded-md bg-slate-800 p-3 ">

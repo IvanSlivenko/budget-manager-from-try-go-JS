@@ -1,8 +1,15 @@
-import { FC } from 'react'
-import { Form } from 'react-router-dom'
+import { FC, useState } from 'react'
+import { Form, useLoaderData } from 'react-router-dom'
 import { FaPlus }  from 'react-icons/fa'
+import { IResponseTransactionLoader } from '../types/types'
+import CategoryModal from '../components/CategoryModal'
 
 const TransactionForm:FC = () => {
+
+    
+    const [visibleModal, setVisibleModal] = useState<boolean>(false)
+
+    const { categories } = useLoaderData() as IResponseTransactionLoader
   return (
     <div className='rounded-md bg-slate-800 p-4'>
         <Form className='grid gap-2' method='post' action='/transactions'>
@@ -17,16 +24,25 @@ const TransactionForm:FC = () => {
         </label>
         
         {/* Select */}
+
+
+        {categories.length 
+        ?
         <label htmlFor="category" className='grid'>
-            <span>Category</span>
+        <span>Category</span>
             <select className='input border-slate-900' name="category" required>
-                <option value="1">Salary</option>
-                <option value="2">Gift</option>
-                <option value="3">Grocery</option>
+                {categories.map((ctg, idx)=>(
+                    <option  key={idx} value={ctg.id}>{ctg.title}</option>
+
+                ))}
             </select>
         </label>
+        :
+        <h1 className='mt-1 text-red-300'>To continue create a category first</h1>
+        }
 
-        <button onClick={()=> {}} className='max-w-fit flex items-center gap-2 text-white/50 mt-2 hover:text-white' >
+        {/* Add Category */}
+        <button onClick={()=> setVisibleModal(true)} className='max-w-fit flex items-center gap-2 text-white/50 mt-2 hover:text-white' >
           <FaPlus/>
           <span>Manage Categories: </span>
         
@@ -50,6 +66,9 @@ const TransactionForm:FC = () => {
             Submit
         </button>
         </Form>
+
+        {/*Add Category Modal */}
+      {visibleModal && <CategoryModal type='post'  setVisibleModal={setVisibleModal}/>}
     </div>
   )
 }

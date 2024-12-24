@@ -1,3 +1,4 @@
+import { IResponseUserData } from './types';
 export interface IUser {
     id: number
     email: string
@@ -29,6 +30,9 @@ export interface ICategory {
     createdAt: string
     updatedAt: string
     transactions: []
+}
 
+export interface IResponseTransactionLoader {
+    categories: ICategory[]
 }
 
