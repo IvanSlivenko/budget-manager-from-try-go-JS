@@ -5,7 +5,6 @@ import { IResponseTransactionLoader } from '../types/types'
 
 const TransactionTable : FC  = () => {
     const { transactions }  = useLoaderData() as IResponseTransactionLoader
-    console.log('transactions', transactions);
     
   return (
     <>
@@ -22,18 +21,20 @@ const TransactionTable : FC  = () => {
                         </tr>
                     </thead>   
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>December</td>
-                            <td>300</td>
-                            <td>Salary</td>
-                            <td>Data</td>
+                        {transactions.map((transaction, idx)=>(
+                        <tr key={idx}>
+                            <td>{idx+1}</td>
+                            <td>{transaction.title}</td>
+                            <td>{transaction.amount}</td>
+                            <td>{transaction.category.title}</td>
+                            <td>{transaction.createdAt}</td>
                             <td>   
                                 <button className='btn hover:btn-red ml-auto'>
                                     <FaTrash/>
                                 </button>
                             </td>
-                        </tr>
+                        </tr> 
+                        ))}
                     </tbody>
              </table>    
         </div>
