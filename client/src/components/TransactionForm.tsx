@@ -15,12 +15,24 @@ const TransactionForm:FC = () => {
         <Form className='grid gap-2' method='post' action='/transactions'>
         <label className='grid' htmlFor="title">
             <span>Title</span>
-            <input className='input  border-slate-900' type="text" placeholder='Title...' name='title' required />
+            <input 
+                className='input  border-slate-900' 
+                type="text" 
+                placeholder='Title...' 
+                name='title' 
+                required 
+            />
         </label>
 
         <label className='grid' htmlFor="amount">
             <span>Amount</span>
-            <input className='input border-slate-900' type="number" placeholder='Amount...' name='amount' required />
+            <input 
+                className='input border-slate-900' 
+                type="number" 
+                placeholder='Amount...' 
+                name='amount' 
+                required 
+            />
         </label>
         
         {/* Select */}
@@ -30,7 +42,11 @@ const TransactionForm:FC = () => {
         ?
         <label htmlFor="category" className='grid'>
         <span>Category</span>
-            <select className='input border-slate-900' name="category" required>
+            <select 
+                className='input border-slate-900' 
+                name="category" 
+                required
+            >
                 {categories.map((ctg, idx)=>(
                     <option  key={idx} value={ctg.id}>{ctg.title}</option>
 
@@ -51,13 +67,23 @@ const TransactionForm:FC = () => {
         {/* Radio Buttons */}
         <div className="flex gap-4 items-center">
             <label className='cursor-pointer flex items-center gap-2'>
-                <input type="radio" name='type' value={'income'} className='form-radio next-blue-600' />
-                <span>Income</span>
+                <input 
+                    type="radio" 
+                    name='type' 
+                    value={'income'} 
+                    className='form-radio next-blue-600' 
+                />
+                <span>Income ( + )</span>
             </label>
 
             <label className='cursor-pointer flex items-center gap-2'>
-                <input type="radio" name='type' value={'expense'} className='form-radio next-blue-600' />
-                <span>Expense</span>
+                <input 
+                    type="radio" 
+                    name='type' 
+                    value={'expense'} 
+                    className='form-radio next-blue-600' 
+                />
+                <span>Expense ( - )</span>
             </label>
         </div>
 

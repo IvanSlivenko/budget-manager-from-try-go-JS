@@ -1,14 +1,18 @@
 import { FC } from 'react'
 import TransactionForm from '../components/TransactionForm'
+import TransactionTable from '../components/TransactionTable'
 import { instance } from '../api/axios.api'
-import { ICategory, IResponseTransactionLoader } from '../types/types'
-import { useLoaderData } from 'react-router-dom'
+import { ICategory } from '../types/types'
+import { toast } from 'react-toastify'
 
 export const transactionLoader = async () => {
   
   const categories = await instance.get<ICategory[]>('/categories')
+  const transactions = await instance.get('/transactions')
+
   const data = {
     categories: categories.data,
+    transactions: transactions.data
   }
   return data
 }
@@ -20,10 +24,13 @@ export const transactionAction = async ({ request }: any) => {
       const formData = await request.formData()
       const newTransaction ={
         title: formData.get('title'),
-        amount: formData.get('amount'),
+        amount: +formData.get('amount'),
         category: formData.get('category'),
         type: formData.get('type')
       }
+      await instance.post('/transactions', newTransaction)
+      toast.success('Transaction added.')
+      return null
     }
     case "DELETE": {
 
@@ -60,7 +67,7 @@ const Transactions: FC = () => {
       </div>
 
       {/* Transactions Table */}
-      <h1 className='my-5'>Table</h1>
+      <TransactionTable></TransactionTable>
     </>
   )
 }
