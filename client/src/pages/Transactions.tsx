@@ -71,7 +71,7 @@ const Transactions: FC = () => {
       </div>
 
       {/* Transactions Table */}
-      <TransactionTable></TransactionTable>
+      <TransactionTable limit={5}/>
     </>
   )
 }
