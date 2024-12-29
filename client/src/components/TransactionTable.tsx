@@ -36,7 +36,7 @@ const TransactionTable : FC<ITransactionTable>  = ({ limit = 3 }) => {
     <>
     <ReactPaginate
         className='flex gap-3 justify-end mt-4 items-center '
-        activeClassName='bg-blue-600 rounded-md'
+        activeClassName='bg-blue-600 rounded-sm'
         pageLinkClassName='text-white text-xs py-1 px-2 rounded-sm'
         previousClassName='text-white py-1 px-2 bg-slate-800 rounded-sm text-xs'
         nextClassName='text-white py-1 px-2 bg-slate-800 rounded-sm text-xs'
@@ -60,7 +60,7 @@ const TransactionTable : FC<ITransactionTable>  = ({ limit = 3 }) => {
                         </tr>
                     </thead>   
                     <tbody>
-                        {transactions.map((transaction, idx)=>(
+                        {data?.map((transaction, idx)=>(
                         <tr key={idx} className="border-b-2 border-x-white">
                             <td>{idx+1}</td>
                             <td>{transaction.title}</td>

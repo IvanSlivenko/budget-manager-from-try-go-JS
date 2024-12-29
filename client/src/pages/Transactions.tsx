@@ -2,17 +2,25 @@ import { FC } from 'react'
 import TransactionForm from '../components/TransactionForm'
 import TransactionTable from '../components/TransactionTable'
 import { instance } from '../api/axios.api'
-import { ICategory } from '../types/types'
+import { ICategory, IResponseTransactionLoader, ITransaction } from '../types/types'
 import { toast } from 'react-toastify'
+import { useLoaderData } from 'react-router-dom'
+import { formatToUSD, formatToUAH } from '../helpers/currency.helper'
 
 export const transactionLoader = async () => {
   
   const categories = await instance.get<ICategory[]>('/categories')
-  const transactions = await instance.get('/transactions')
+  const transactions = await instance.get<ITransaction[]>('/transactions')
+  const totalIncome = await instance.get<number>('/transactions/income/find')
+  const totalExpense = await instance.get<number>('/transactions/expense/find')
+
 
   const data = {
     categories: categories.data,
-    transactions: transactions.data
+    transactions: transactions.data,
+    totalIncome: totalIncome.data,
+    totalExpense: totalExpense.data
+
   }
   return data
 }
@@ -45,6 +53,7 @@ export const transactionAction = async ({ request }: any) => {
 }
 
 const Transactions: FC = () => {
+  const {totalExpense, totalIncome} = useLoaderData() as IResponseTransactionLoader
   return (
     <>
       <div className="grid grid-cols-3 gap-4 mt-4 items-start">
@@ -58,11 +67,11 @@ const Transactions: FC = () => {
           <div className="grid  grid-cols-2 gap-3">
              <div>
                 <p className='uppercase text-md fond-bold text-center '>Total Income:</p>
-                <p className="bg-green-600 p-1 rounded-sm text-center mt-2"> 1 000 грн.</p>
+                <p className="bg-green-600 p-1 rounded-sm text-center mt-2">{formatToUAH(totalIncome)}</p>
              </div>
              <div>
                 <p className='uppercase text-md fond-bold text-center '>Total Expense:</p>
-                <p className="bg-red-500 p-1 rounded-sm text-center mt-2"> 1 000 грн.</p>
+                <p className="bg-red-500 p-1 rounded-sm text-center mt-2"> {formatToUAH(totalExpense)}</p>
              </div>
           </div>
 
