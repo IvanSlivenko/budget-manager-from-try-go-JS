@@ -179,7 +179,9 @@ https://youtu.be/BX5Lw24IVA4?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
 
 https://youtu.be/7tTtLfw-acU?list=PLkUJHNMBzmtRuSUgA_9g0lmMC_Y1TW2K1
 --------------------------------------------------------------------- transactions
+npm i react-paginate
+npm install recharts
 
 
 ---------------------------------------------------------------------
-01 : 21 : 04
+01 : 31 : 53
