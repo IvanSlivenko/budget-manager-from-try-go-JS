@@ -1,5 +1,7 @@
 import {FC} from 'react'
+import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
 
+const COLORS = ['#00C49F', '#FF8042'];
 interface IChart {
     totalIncome: number,
     totalExpense: number
@@ -11,41 +13,34 @@ interface IData {
     name: string
 }
 
+
+
 const Chart: FC<IChart> = ({ totalExpense, totalIncome }) => {
-  return (
-    <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
+    const data = new Array<IData>(
+        { value: totalExpense, name: 'Expense'},
+        {value: totalIncome, name: 'Income'}
+    )
+    return (
+    <PieChart width={240} height={270}>
         <Pie
-          data={data}
-          cx={120}
-          cy={200}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          paddingAngle={5}
-          dataKey="value"
+            data={data}
+            cx={'50%'}
+            cy={'50%'}
+            innerRadius={60}
+            outerRadius={80}
+            fill="#8884d8"
+            paddingAngle={2}
+            dataKey="value"
         >
-          {data.map((entry, index) => (
+            {data.map((_, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
+            ))}
         </Pie>
-        <Pie
-          data={data}
-          cx={420}
-          cy={200}
-          startAngle={180}
-          endAngle={0}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          paddingAngle={5}
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-      </PieChart>
-  )
+            <Legend/>
+            <Tooltip/>
+        
+        </PieChart>
+    )
 }
 
 export default Chart

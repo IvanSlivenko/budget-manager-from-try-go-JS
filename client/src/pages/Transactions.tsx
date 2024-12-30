@@ -4,8 +4,9 @@ import TransactionTable from '../components/TransactionTable'
 import { instance } from '../api/axios.api'
 import { ICategory, IResponseTransactionLoader, ITransaction } from '../types/types'
 import { toast } from 'react-toastify'
-import { useLoaderData } from 'react-router-dom'
+import { data, useLoaderData } from 'react-router-dom'
 import { formatToUSD, formatToUAH } from '../helpers/currency.helper'
+import Chart from '../components/Chart'
 
 export const transactionLoader = async () => {
   
@@ -75,7 +76,9 @@ const Transactions: FC = () => {
              </div>
           </div>
 
-          <>Chart</>
+          <>
+          <Chart totalExpense={totalExpense} totalIncome={totalIncome}/>
+          </>
         </div>
       </div>
 
